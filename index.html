@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+  <script src="addons/p5.min.js"></script>
+  <script src="addons/p5.sound.min.js"></script>
+  <script src="addons/p5.dom.min.js"></script>
+
+</head>
+
+<body>
+  <h2 style="color : red;">Mettere i punti alla fine delle frasi?</h2>
+  <h2>Press ARROW UP to generate a new combination</h2>
+
+  <div id="fieldContainer">
+
+    <div id="inputPar1">
+      <input type="number" name="input1" id="input1" min="1" max="99">
+      <button onclick="generatePar1(document.getElementById('input1').value)">OK</button>
+    </div>
+
+    <div id="inputPar2">
+      <input type="number" name="input2" id="input2" min="1" max="99">
+      <button onclick="generatePar2(document.getElementById('input2').value)">OK</button>
+    </div>
+
+    <div id="inputPar3">
+      <input type="number" name="input3" id="input3" min="1" max="99">
+      <button onclick="generatePar3(document.getElementById('input3').value)">OK</button>
+    </div>
+
+    <div id="inputPar4">
+      <input type="number" name="input4" id="input4" min="1" max="99">
+      <button onclick="generatePar4(document.getElementById('input4').value)">OK</button>
+    </div>
+
+    <div id="inputPar5">
+      <input type="number" name="input5" id="input5" min="1" max="99">
+      <button onclick="generatePar5(document.getElementById('input5').value)">OK</button>
+    </div>
+
+    <div id="inputPar6">
+      <input type="number" name="input6" id="input6" min="1" max="99">
+      <button onclick="generatePar6(document.getElementById('input6').value)">OK</button>
+    </div>
+
+
+  </div>
+
+  <div id="parContainer">
+    <p id="par1">Paragrafo 1</p>
+    <p id="par2">Paragrafo 2</p>
+    <p id="par3">Paragrafo 3</p>
+    <p id="par4">Paragrafo 4</p>
+    <p id="par5">Paragrafo 5</p>
+    <p id="par6">Paragrafo 6</p>
+  </div>
+
+</body>
+
+<script src="sketch.js"></script>
+
+</html>
