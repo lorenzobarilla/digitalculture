@@ -19,6 +19,7 @@ function preload() {
 function setup() {
   totBrani = myData.exercises.length;
   noCanvas();
+  generateAllPar();
 }
 
 function generatePar1(exNum) {
