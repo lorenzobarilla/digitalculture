@@ -165,9 +165,3 @@ function generateAllPar() {
   generatePar5();
   generatePar6();
 }
-
-function keyPressed() {
-  if (keyCode === UP_ARROW) {
-    generateAllPar();
-  }
-}
