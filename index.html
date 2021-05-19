@@ -9,10 +9,35 @@
       padding: 0;
       margin: 0;
     }
+
     .paragraph-style {
       display: inline;
       font-size: 18px;
       font-family: sans-serif;
+    }
+
+    .color1 {
+      color: red;
+    }
+
+    .color2 {
+      color: green;
+    }
+
+    .color3 {
+      color: blue;
+    }
+
+    .color4 {
+      color: aquamarine;
+    }
+
+    .color5 {
+      color: brown;
+    }
+
+    .color6 {
+      color: pink;
     }
   </style>
   <script src="addons/p5.min.js"></script>
@@ -29,58 +54,54 @@
     <h3>Press ARROW UP to generate a new random combination</h3>
 
     <div id="inputPar1">
-      <span>Paragrafo 1</span>
+      <span class="color1">Paragrafo 1</span>
       <input type="number" name="input1" id="input1" min="1" max="99">
       <button onclick="generatePar1(document.getElementById('input1').value)">OK</button>
     </div>
 
     <div id="inputPar2">
-      <span>Paragrafo 2</span>
+      <span class="color2">Paragrafo 2</span>
       <input type="number" name="input2" id="input2" min="1" max="99">
       <button onclick="generatePar2(document.getElementById('input2').value)">OK</button>
     </div>
 
     <div id="inputPar3">
-      <span>Paragrafo 3</span>
+      <span class="color3">Paragrafo 3</span>
       <input type="number" name="input3" id="input3" min="1" max="99">
       <button onclick="generatePar3(document.getElementById('input3').value)">OK</button>
     </div>
 
     <div id="inputPar4">
-      <span>Paragrafo 4</span>
+      <span class="color4">Paragrafo 4</span>
       <input type="number" name="input4" id="input4" min="1" max="99">
       <button onclick="generatePar4(document.getElementById('input4').value)">OK</button>
     </div>
 
     <div id="inputPar5">
-      <span>Paragrafo 5</span>
+      <span class="color5">Paragrafo 5</span>
       <input type="number" name="input5" id="input5" min="1" max="99">
       <button onclick="generatePar5(document.getElementById('input5').value)">OK</button>
     </div>
 
     <div id="inputPar6">
-      <span>Paragrafo 6</span>
+      <span class="color6">Paragrafo 6</span>
       <input type="number" name="input6" id="input6" min="1" max="99">
       <button onclick="generatePar6(document.getElementById('input6').value)">OK</button>
     </div>
-
 
   </div>
 
   <br><br>
 
   <div id="parContainer">
-    <p id="par1" class="paragraph-style" style="color: red;">Paragrafo 1</p>
-    <p id="par2" class="paragraph-style" style="color: green;">Paragrafo 2</p>
-    <p id="par3" class="paragraph-style" style="color: blue;">Paragrafo 3</p>
-    <p id="par4" class="paragraph-style" style="color: aquamarine;">Paragrafo 4</p>
-    <p id="par5" class="paragraph-style" style="color: brown;">Paragrafo 5</p>
-    <p id="par6" class="paragraph-style" style="color: pink;">Paragrafo 6</p>
+    <p id="par1" class="color1 paragraph-style">Paragrafo 1</p>
+    <p id="par2" class="color2 paragraph-style">Paragrafo 2</p>
+    <p id="par3" class="color3 paragraph-style">Paragrafo 3</p>
+    <p id="par4" class="color4 paragraph-style">Paragrafo 4</p>
+    <p id="par5" class="color5 paragraph-style">Paragrafo 5</p>
+    <p id="par6" class="color6 paragraph-style">Paragrafo 6</p>
   </div>
 
-  <br><br><br>
-  <p style="font-family: sans-serif;">WORKING NOTES FOR THE GROUP</p>
-  <h2 style="color : red;">Mettiamo i punti alla fine delle frasi?</h2>
 
 </body>
 
