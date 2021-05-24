@@ -4,12 +4,33 @@ var totParti = 6;
 //numero di brani presenti nel database
 var totBrani;
 
+//get the <p> of the Exercise
 var myPar1 = document.querySelector('#par1');
 var myPar2 = document.querySelector('#par2');
 var myPar3 = document.querySelector('#par3');
 var myPar4 = document.querySelector('#par4');
 var myPar5 = document.querySelector('#par5');
 var myPar6 = document.querySelector('#par6');
+
+//get the input
+var myInput1 = document.querySelector('#input1');
+var myInput2 = document.querySelector('#input2');
+var myInput3 = document.querySelector('#input3');
+var myInput4 = document.querySelector('#input4');
+var myInput5 = document.querySelector('#input5');
+var myInput6 = document.querySelector('#input6');
+
+//get the sliders
+var mySlider1 = document.querySelector('#slider1');
+var mySlider2 = document.querySelector('#slider2');
+var mySlider3 = document.querySelector('#slider3');
+var mySlider4 = document.querySelector('#slider4');
+var mySlider5 = document.querySelector('#slider5');
+var mySlider6 = document.querySelector('#slider6');
+
+//get the <p> TITLE of the Exercise
+var myExerciseTitle = document.querySelector('#exercise-title');
+
 
 
 function preload() {
@@ -43,6 +64,8 @@ function generatePar1(exNum) {
     myPar1.innerHTML = myData.exercises[rndNum][1];
   }
   document.querySelector('#input1').value = rndNum + 1;
+  document.querySelector('#slider1').value = rndNum + 1;
+  generateTitle();
 }
 
 function generatePar2(exNum) {
@@ -66,6 +89,8 @@ function generatePar2(exNum) {
     myPar2.innerHTML = myData.exercises[rndNum][2];
   }
   document.querySelector('#input2').value = rndNum + 1;
+  document.querySelector('#slider2').value = rndNum + 1;
+  generateTitle();
 }
 
 function generatePar3(exNum) {
@@ -89,6 +114,8 @@ function generatePar3(exNum) {
     myPar3.innerHTML = myData.exercises[rndNum][3];
   }
   document.querySelector('#input3').value = rndNum + 1;
+  document.querySelector('#slider3').value = rndNum + 1;
+  generateTitle();
 }
 
 function generatePar4(exNum) {
@@ -111,6 +138,8 @@ function generatePar4(exNum) {
     myPar4.innerHTML = myData.exercises[rndNum][4];
   }
   document.querySelector('#input4').value = rndNum + 1;
+  document.querySelector('#slider4').value = rndNum + 1;
+  generateTitle();
 }
 
 function generatePar5(exNum) {
@@ -133,6 +162,8 @@ function generatePar5(exNum) {
     myPar5.innerHTML = myData.exercises[rndNum][5];
   }
   document.querySelector('#input5').value = rndNum + 1;
+  document.querySelector('#slider5').value = rndNum + 1;
+  generateTitle();
 }
 
 function generatePar6(exNum) {
@@ -155,6 +186,8 @@ function generatePar6(exNum) {
     myPar6.innerHTML = myData.exercises[rndNum][6];
   }
   document.querySelector('#input6').value = rndNum + 1;
+  document.querySelector('#slider6').value = rndNum + 1;
+  generateTitle();
 }
 
 function generateAllPar() {
@@ -164,4 +197,10 @@ function generateAllPar() {
   generatePar4();
   generatePar5();
   generatePar6();
+
+  generateTitle();
+}
+
+function generateTitle(){
+  myExerciseTitle.innerHTML = 'Exercise #' + myInput1.value + '' + myInput2.value + '' + myInput3.value + '' + myInput4.value + '' + myInput5.value + '' + myInput6.value;
 }
