@@ -31,6 +31,7 @@ var mySlider6 = document.querySelector('#slider6');
 //get the <p> TITLE of the Exercise
 var myExerciseTitle = document.querySelector('#exercise-title');
 
+var overlayDiv = document.querySelector('#overlay');
 
 
 function preload() {
@@ -41,6 +42,7 @@ function setup() {
   totBrani = myData.exercises.length;
   noCanvas();
   generateAllPar();
+  createLegenda();
 }
 
 function generatePar1(exNum) {
@@ -203,4 +205,22 @@ function generateAllPar() {
 
 function generateTitle(){
   myExerciseTitle.innerHTML = 'Exercise #' + myInput1.value + '' + myInput2.value + '' + myInput3.value + '' + myInput4.value + '' + myInput5.value + '' + myInput6.value;
+}
+
+function overlayOn() {
+  overlayDiv.style.display = "block";
+}
+
+function overlayOff() {
+  overlayDiv.style.display = "none";
+}
+
+function createLegenda() {
+  var ul = document.getElementById("elenco-legenda");
+
+  for (i = 0; i < myData.exercises.length; i++){
+    var li = document.createElement("li");
+    li.innerHTML = myData.exercises[i]["Esercizio"] + " " + myData.exercises[i]["Title"];
+    ul.appendChild(li);
+  }
 }
