@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
+  <title>Generator</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
+  <style></style>
+  <script src="addons/p5.min.js"></script>
+  <script src="addons/p5.sound.min.js"></script>
+  <script src="addons/p5.dom.min.js"></script>
+</head>
+
+<body>
+
+  <div id="overlay" onclick="overlayOff()">
+    <ul id="elenco-legenda" style="font-family:'Space Mono', monospace; font-size: 15px;"></ul>
+    <button class="randomize-button legenda-button">CLICK TO CLOSE</button>
+  </div>
+
+  <div id="fieldContainer" class="field-container">
+
+    <button onclick="location.href='index.html'" type="button" class="randomize-button legenda-button">HOME</button>
+    <br><br>
+
+
+    <div id="inputPar1">
+      <span class="input-text color1">Paragraph 1</span>
+      <input type="number" name="input1" class="input-field" id="input1" min="1" max="99" step="1" onchange="if(parseInt(this.value,10)<10)this.value='0'+this.value; generatePar1(document.getElementById('input1').value);">
+      <input type="range" min="1" max="99" class="slider" id="slider1" oninput="generatePar1(document.getElementById('slider1').value)">
+    </div>
+
+    <br>
+
+    <div id="inputPar2">
+      <span class="input-text color2">Paragraph 2</span>
+      <input type="number" name="input2" class="input-field" id="input2" min="1" max="99" step="1" onchange="if(parseInt(this.value,10)<10)this.value='0'+this.value; generatePar2(document.getElementById('input2').value);">
+      <input type="range" min="1" max="99" class="slider" id="slider2" oninput="generatePar2(document.getElementById('slider2').value)">
+    </div>
+
+    <br>
+
+    <div id="inputPar3">
+      <span class="input-text color3">Paragraph 3</span>
+      <input type="number" name="input3" class="input-field" id="input3" min="1" max="99" step="1" onchange="if(parseInt(this.value,10)<10)this.value='0'+this.value; generatePar3(document.getElementById('input3').value);">
+      <input type="range" min="1" max="99" class="slider" id="slider3" oninput="generatePar3(document.getElementById('slider3').value)">
+    </div>
+
+    <br>
+
+    <div id="inputPar4">
+      <span class="input-text color4">Paragraph 4</span>
+      <input type="number" name="input4" class="input-field" id="input4" min="1" max="99" step="1" onchange="if(parseInt(this.value,10)<10)this.value='0'+this.value; generatePar4(document.getElementById('input4').value);">
+      <input type="range" min="1" max="99" class="slider" id="slider4" oninput="generatePar4(document.getElementById('slider4').value)">
+    </div>
+
+    <br>
+
+    <div id="inputPar5">
+      <span class="input-text color5">Paragraph 5</span>
+      <input type="number" name="input5" class="input-field" id="input5" min="1" max="99" step="1" onchange="if(parseInt(this.value,10)<10)this.value='0'+this.value; generatePar5(document.getElementById('input5').value);">
+      <input type="range" min="1" max="99" class="slider" id="slider5" oninput="generatePar5(document.getElementById('slider5').value)">
+    </div>
+
+    <br>
+
+    <div id="inputPar6">
+      <span class="input-text color6">Paragraph 6</span>
+      <input type="number" name="input6" class="input-field" id="input6" min="1" max="99" step="1" onchange="if(parseInt(this.value,10)<10)this.value='0'+this.value; generatePar6(document.getElementById('input6').value)">
+      <input type="range" min="1" max="99" class="slider" id="slider6" oninput="generatePar6(document.getElementById('slider6').value)">
+    </div>
+
+    <br>
+    <br>
+
+    <div id="randomize-button">
+      <button onclick="generateAllPar()" class="randomize-button">RANDOMIZE ALL</button>
+    </div>
+
+    <br>
+    <button onclick="overlayOn()" class="randomize-button legenda-button">LEGEND</button>
+    <br><br>
+
+    <div style="transform: translate(-50%, 0); left: 50%; width:100%; ">
+      <button onclick="" class="randomize-button legenda-button share-button">SAVE IMG</button>
+      <button onclick="" class="randomize-button legenda-button share-button">SHARE IG</button>
+      <button onclick="" class="randomize-button legenda-button share-button">SHARE FB</button>
+    </div>
+  </div>
+
+
+  <div id="parContainer" class="p-container">
+    <p id="exercise-title" class="title">Exercise #1234567890</p>
+    <p id="par1" class="color1 paragraph-style">Paragraph 1</p>
+    <p id="par2" class="color2 paragraph-style">Paragraph 2</p>
+    <p id="par3" class="color3 paragraph-style">Paragraph 3</p>
+    <p id="par4" class="color4 paragraph-style">Paragraph 4</p>
+    <p id="par5" class="color5 paragraph-style">Paragraph 5</p>
+    <p id="par6" class="color6 paragraph-style">Paragraph 6</p>
+  </div>
+
+</body>
+
+<script src="sketch.js"></script>
+
+</html>
