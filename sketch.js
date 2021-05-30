@@ -47,12 +47,10 @@ function setup() {
 
 function generatePar1(exNum) {
   var rndNum;
-  if (exNum === undefined)
-  {
-    rndNum = round(random(0, totBrani-1));
-  }
-  else {
-    if (exNum > totBrani){
+  if (exNum === undefined) {
+    rndNum = round(random(0, totBrani - 1));
+  } else {
+    if (exNum > totBrani) {
       exNum = totBrani;
     } else if (exNum < 1) {
       exNum = 1;
@@ -72,12 +70,10 @@ function generatePar1(exNum) {
 
 function generatePar2(exNum) {
   var rndNum;
-  if (exNum === undefined)
-  {
-    rndNum = round(random(0, totBrani-1));
-  }
-  else {
-    if (exNum > totBrani){
+  if (exNum === undefined) {
+    rndNum = round(random(0, totBrani - 1));
+  } else {
+    if (exNum > totBrani) {
       exNum = totBrani;
     } else if (exNum < 1) {
       exNum = 1;
@@ -97,12 +93,10 @@ function generatePar2(exNum) {
 
 function generatePar3(exNum) {
   var rndNum;
-  if (exNum === undefined)
-  {
-    rndNum = round(random(0, totBrani-1));
-  }
-  else {
-    if (exNum > totBrani){
+  if (exNum === undefined) {
+    rndNum = round(random(0, totBrani - 1));
+  } else {
+    if (exNum > totBrani) {
       exNum = totBrani;
     } else if (exNum < 1) {
       exNum = 1;
@@ -122,12 +116,10 @@ function generatePar3(exNum) {
 
 function generatePar4(exNum) {
   var rndNum;
-  if (exNum === undefined)
-  {
-    rndNum = round(random(0, totBrani-1));
-  }
-  else {
-    if (exNum > totBrani){
+  if (exNum === undefined) {
+    rndNum = round(random(0, totBrani - 1));
+  } else {
+    if (exNum > totBrani) {
       exNum = totBrani;
     } else if (exNum < 1) {
       exNum = 1;
@@ -146,12 +138,10 @@ function generatePar4(exNum) {
 
 function generatePar5(exNum) {
   var rndNum;
-  if (exNum === undefined)
-  {
-    rndNum = round(random(0, totBrani-1));
-  }
-  else {
-    if (exNum > totBrani){
+  if (exNum === undefined) {
+    rndNum = round(random(0, totBrani - 1));
+  } else {
+    if (exNum > totBrani) {
       exNum = totBrani;
     } else if (exNum < 1) {
       exNum = 1;
@@ -170,12 +160,10 @@ function generatePar5(exNum) {
 
 function generatePar6(exNum) {
   var rndNum;
-  if (exNum === undefined)
-  {
-    rndNum = round(random(0, totBrani-1));
-  }
-  else {
-    if (exNum > totBrani){
+  if (exNum === undefined) {
+    rndNum = round(random(0, totBrani - 1));
+  } else {
+    if (exNum > totBrani) {
       exNum = totBrani;
     } else if (exNum < 1) {
       exNum = 1;
@@ -203,7 +191,7 @@ function generateAllPar() {
   generateTitle();
 }
 
-function generateTitle(){
+function generateTitle() {
   myExerciseTitle.innerHTML = 'Exercise #' + myInput1.value + '' + myInput2.value + '' + myInput3.value + '' + myInput4.value + '' + myInput5.value + '' + myInput6.value;
 }
 
@@ -218,7 +206,7 @@ function overlayOff() {
 function createLegenda() {
   var ul = document.getElementById("elenco-legenda");
 
-  for (i = 0; i < myData.exercises.length; i++){
+  for (i = 0; i < myData.exercises.length; i++) {
     var li = document.createElement("li");
     li.innerHTML = myData.exercises[i]["Esercizio"] + " " + myData.exercises[i]["Title"];
     ul.appendChild(li);
@@ -234,33 +222,34 @@ function saveExercise() {
   myExercise.save('myExercise', 'png');
 }
 
+
+
 function doCapture() {
-    window.scrollTo(0, 0);
+  window.scrollTo(0, 0);
 
-    html2canvas(document.getElementById("parContainer")).then(function (canvas) {
+  var title = document.querySelector('#exercise-title').innerHTML;
 
-        // Create an AJAX object
-        var ajax = new XMLHttpRequest();
+  myPar1.appendChild(document.createElement('br'));
+  myPar2.appendChild(document.createElement('br'));
+  myPar3.appendChild(document.createElement('br'));
+  myPar4.appendChild(document.createElement('br'));
+  myPar5.appendChild(document.createElement('br'));
+  myPar6.appendChild(document.createElement('br'));
 
-        // Setting method, server file name, and asynchronous
-        ajax.open("POST", "save-capture.php", true);
+ // Convert the div to image (canvas)
+  html2canvas(document.getElementById("parContainer")).then(function(canvas) {
 
-        // Setting headers for POST method
-        ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-
-        // Sending image data to server
-        ajax.send("image=" + canvas.toDataURL("image/jpeg", 0.9));
-
-        // Receiving response from server
-        // This function will be called multiple times
-        ajax.onreadystatechange = function () {
-
-            // Check when the requested is completed
-            if (this.readyState == 4 && this.status == 200) {
-
-                // Displaying response from server
-                console.log(this.responseText);
-            }
-        };
+    canvas.toBlob(function(blob) {
+      saveAs(blob, title + ".png");
     });
+
+  });
+
+  myPar1.removeChild(myPar1.childNodes[1]);
+  myPar2.removeChild(myPar2.childNodes[1]);
+  myPar3.removeChild(myPar3.childNodes[1]);
+  myPar4.removeChild(myPar4.childNodes[1]);
+  myPar5.removeChild(myPar5.childNodes[1]);
+  myPar6.removeChild(myPar6.childNodes[1]);
+
 }
