@@ -273,9 +273,11 @@ function shareFb() {
 
     canvas.toBlob(function(blob) {
       let imageUrl = URL.createObjectURL(blob);
-      // fbs_click(blob);
       let myImgFb = document.querySelector('#test-img');
       myImgFb.src = imageUrl;
+
+      fbs_click(myImgFb, imageUrl);
+
     });
   });
 
@@ -285,12 +287,11 @@ function shareFb() {
   myPar4.removeChild(myPar4.childNodes[1]);
   myPar5.removeChild(myPar5.childNodes[1]);
   myPar6.removeChild(myPar6.childNodes[1]);
-
 }
 
 
-function fbs_click(TheImg) {
-     u=TheImg.src;
+function fbs_click(TheImg, u) {
+     // u=TheImg.src;
      // t=document.title;
     t=TheImg.getAttribute('alt');
     window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&t='+encodeURIComponent(t),'sharer','toolbar=0,status=0,width=626,height=436');return false;
