@@ -277,6 +277,10 @@ function shareFb() {
       myImgFb.src = imageUrl;
 
       fbs_click(myImgFb, imageUrl);
+      console.log(imageUrl);
+
+      // fbShareAngular(blob);
+      myImgFb.src = " ";
 
     });
   });
@@ -288,6 +292,24 @@ function shareFb() {
   myPar5.removeChild(myPar5.childNodes[1]);
   myPar6.removeChild(myPar6.childNodes[1]);
 }
+
+
+// function fbShareAngular(blob)  {
+//   var fd = new FormData();
+// fd.append(‘access_token’, $scope.facebook.authToken);
+// fd.append(‘source’, blob);
+// fd.append(‘message’, $scope.canvas.background.getCaption());
+//
+//
+// $http.post(‘https://graph.facebook.com/me/photos?access_token=' + $scope.facebook.authToken, fd, {
+//  transformRequest: angular.identity,
+// headers: {
+// ‘Content-Type’: undefined
+//    }
+// })
+// .success(function (res) { // Success logic })
+// .error(function (res) { // Error logic });
+// }
 
 
 function fbs_click(TheImg, u) {
