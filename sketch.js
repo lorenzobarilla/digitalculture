@@ -268,22 +268,16 @@ function shareFb() {
   myPar5.appendChild(document.createElement('br'));
   myPar6.appendChild(document.createElement('br'));
 
- // // Convert the div to image (canvas)
- //  html2canvas(document.getElementById("parContainer")).then(function(canvas) {
- //
- //    canvas.toBlob(function(blob) {
- //      let imageUrl = URL.createObjectURL(blob);
- //      // fbs_click(blob);
- //      let myImgFb = document.createElement("img");
- //      myImgFb.src = imageUrl;
- //      fbs_click(myImgFb);
- //    });
- //  });
+ // Convert the div to image (canvas)
+  html2canvas(document.getElementById("parContainer")).then(function(canvas) {
 
-
-  let myImgFb = document.querySelector('#test-img');
-  fbs_click(myImgFb);
-
+    canvas.toBlob(function(blob) {
+      let imageUrl = URL.createObjectURL(blob);
+      // fbs_click(blob);
+      let myImgFb = document.querySelector('#test-img');
+      myImgFb.src = imageUrl;
+    });
+  });
 
   myPar1.removeChild(myPar1.childNodes[1]);
   myPar2.removeChild(myPar2.childNodes[1]);
