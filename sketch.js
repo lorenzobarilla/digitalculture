@@ -213,16 +213,6 @@ function createLegenda() {
   }
 }
 
-function saveExercise() {
-  var myExercise = document.querySelector('#parContainer');
-
-  var ctx = myExercise.getContext('2d');
-
-
-  myExercise.save('myExercise', 'png');
-}
-
-
 
 function doCapture() {
   window.scrollTo(0, 0);
@@ -236,7 +226,7 @@ function doCapture() {
   myPar5.appendChild(document.createElement('br'));
   myPar6.appendChild(document.createElement('br'));
 
- // Convert the div to image (canvas)
+  // Convert the div to image (canvas)
   html2canvas(document.getElementById("parContainer")).then(function(canvas) {
 
     canvas.toBlob(function(blob) {
@@ -251,70 +241,76 @@ function doCapture() {
   myPar4.removeChild(myPar4.childNodes[1]);
   myPar5.removeChild(myPar5.childNodes[1]);
   myPar6.removeChild(myPar6.childNodes[1]);
-
 }
 
-
-
-function shareFb() {
-  window.scrollTo(0, 0);
-
-  var title = document.querySelector('#exercise-title').innerHTML;
-
-  myPar1.appendChild(document.createElement('br'));
-  myPar2.appendChild(document.createElement('br'));
-  myPar3.appendChild(document.createElement('br'));
-  myPar4.appendChild(document.createElement('br'));
-  myPar5.appendChild(document.createElement('br'));
-  myPar6.appendChild(document.createElement('br'));
-
- // Convert the div to image (canvas)
-  html2canvas(document.getElementById("parContainer")).then(function(canvas) {
-
-    canvas.toBlob(function(blob) {
-      let imageUrl = URL.createObjectURL(blob);
-      let myImgFb = document.querySelector('#test-img');
-      myImgFb.src = imageUrl;
-
-      fbs_click(myImgFb, imageUrl);
-      console.log(imageUrl);
-
-      // fbShareAngular(blob);
-      myImgFb.src = " ";
-
-    });
-  });
-
-  myPar1.removeChild(myPar1.childNodes[1]);
-  myPar2.removeChild(myPar2.childNodes[1]);
-  myPar3.removeChild(myPar3.childNodes[1]);
-  myPar4.removeChild(myPar4.childNodes[1]);
-  myPar5.removeChild(myPar5.childNodes[1]);
-  myPar6.removeChild(myPar6.childNodes[1]);
-}
-
-
-// function fbShareAngular(blob)  {
-//   var fd = new FormData();
-// fd.append(‘access_token’, $scope.facebook.authToken);
-// fd.append(‘source’, blob);
-// fd.append(‘message’, $scope.canvas.background.getCaption());
+// function saveExercise() {
+//   var myExercise = document.querySelector('#parContainer');
 //
-//
-// $http.post(‘https://graph.facebook.com/me/photos?access_token=' + $scope.facebook.authToken, fd, {
-//  transformRequest: angular.identity,
-// headers: {
-// ‘Content-Type’: undefined
-//    }
-// })
-// .success(function (res) { // Success logic })
-// .error(function (res) { // Error logic });
+//   var ctx = myExercise.getContext('2d');
+//   myExercise.save('myExercise', 'png');
 // }
 
 
-function fbs_click(TheImg, u) {
-     // u=TheImg.src;
-     // t=document.title;
-    t=TheImg.getAttribute('alt');
-    window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&t='+encodeURIComponent(t),'sharer','toolbar=0,status=0,width=626,height=436');return false;
-}
+// function shareFb() {
+//   window.scrollTo(0, 0);
+//
+//   var title = document.querySelector('#exercise-title').innerHTML;
+//
+//   myPar1.appendChild(document.createElement('br'));
+//   myPar2.appendChild(document.createElement('br'));
+//   myPar3.appendChild(document.createElement('br'));
+//   myPar4.appendChild(document.createElement('br'));
+//   myPar5.appendChild(document.createElement('br'));
+//   myPar6.appendChild(document.createElement('br'));
+//
+//   // Convert the div to image (canvas)
+//   html2canvas(document.getElementById("parContainer")).then(function(canvas) {
+//
+//     canvas.toBlob(function(blob) {
+//       let imageUrl = URL.createObjectURL(blob);
+//       let myImgFb = document.querySelector('#test-img');
+//       myImgFb.src = imageUrl;
+//
+//       fbs_click(myImgFb, imageUrl);
+//       console.log(imageUrl);
+//
+//       // fbShareAngular(blob);
+//       myImgFb.src = " ";
+//
+//     });
+//   });
+//
+//   myPar1.removeChild(myPar1.childNodes[1]);
+//   myPar2.removeChild(myPar2.childNodes[1]);
+//   myPar3.removeChild(myPar3.childNodes[1]);
+//   myPar4.removeChild(myPar4.childNodes[1]);
+//   myPar5.removeChild(myPar5.childNodes[1]);
+//   myPar6.removeChild(myPar6.childNodes[1]);
+// }
+
+
+// function fbShareAngular(blob) {
+//   var fd = new FormData();
+//   fd.append('access_token', $scope.facebook.authToken);
+//   fd.append('source', blob);
+//   fd.append('message', $scope.canvas.background.getCaption());
+//
+//
+//   $http.post('https://graph.facebook.com/me/photos?access_token=' + $scope.facebook.authToken, fd, {
+//     transformRequest: angular.identity,
+//     headers: {
+//       'Content - Type': undefined
+//     }
+//   })
+// .success(function(res) {})
+//   .error(function(res) {});
+// }
+
+
+// function fbs_click(TheImg, u) {
+//   // u=TheImg.src;
+//   // t=document.title;
+//   t = TheImg.getAttribute('alt');
+//   window.open('http://www.facebook.com/sharer.php?u=' + encodeURIComponent(u) + '&t=' + encodeURIComponent(t), 'sharer', 'toolbar=0,status=0,width=626,height=436');
+//   return false;
+// }

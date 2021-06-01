@@ -14,14 +14,13 @@
   <script src="addons/p5.dom.min.js"></script>
   <script src="addons/html2canvas.min.js"></script>
   <script src="addons/FileSaver.min.js"></script>
-
 </head>
 
 <body>
 
-  <div id="overlay" onclick="overlayOff()" style="overflow-y: scroll; overflow-x: hidden;" >
+  <div id="overlay" onclick="overlayOff()" style="overflow-y: scroll; overflow-x: hidden;">
     <ul id="elenco-legenda" style="font-family:'Space Mono', monospace; font-size: 14px;"></ul>
-    <button class="randomize-button legenda-button">CLICK TO CLOSE</button>
+    <button class="randomize-button legenda-button" style="margin: 10px;">CLICK TO CLOSE</button>
   </div>
 
   <div id="fieldContainer" class="field-container">
@@ -86,13 +85,8 @@
     <br>
     <button onclick="overlayOn()" class="randomize-button legenda-button">LEGEND</button>
     <br><br>
-
-    <div style="transform: translate(-50%, 0); left: 50%; width:100%; ">
-      <button onclick="doCapture()" class="randomize-button legenda-button share-button">SAVE IMG</button>
-      <button onclick="shareFb()" class="randomize-button legenda-button share-button">SHARE FB</button>
-    </div>
+    <button onclick="doCapture()" class="randomize-button legenda-button">SAVE IMG</button>
   </div>
-
 
   <div id="parContainer" class="p-container">
     <p id="exercise-title" class="title">Exercise #1234567890</p>
