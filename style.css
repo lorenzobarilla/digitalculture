@@ -5,7 +5,7 @@ body {
 }
 
 .p-container {
-  width: 65%;
+  max-width: 65%;
   display: block;
   float: right;
   padding-right: 10%;
@@ -195,4 +195,7 @@ body {
 .legenda-button {
   color: #000;
   border-color: #000;
+}
+.small-button {
+  font-size: 18px;
 }
